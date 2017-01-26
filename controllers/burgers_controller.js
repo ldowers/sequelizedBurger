@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
 });
 
 router.get("/burgers", function(req, res) {
-    models.Burger.findAll()
+    models.Burger.findAll({ order: 'burger_name ASC' })
         .then(function(data) {
             var hbsObject = {
                 burgers: data
